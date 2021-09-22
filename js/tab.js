@@ -1,13 +1,14 @@
 'use strict';
 
-const tabContainer = document.querySelector('.design-block');
+const tabContainer = document.querySelector('.section.design');
 const tabButtons = tabContainer.querySelectorAll('.design-list__item');
 
 tabButtons.forEach((element, index) => {
   const tabHeaders = tabContainer.querySelectorAll('.design__title');
-  const tabImages = tabContainer.querySelectorAll('.design-block__img');
+  const tabImage = tabContainer.querySelectorAll('.design-block__img');
+  const tabImages = tabContainer.querySelectorAll('.design-images');
   const tabDescription = tabContainer.querySelectorAll('.design__descr');
-  const tabItems = [tabHeaders, tabImages, tabDescription];
+  const tabItems = [tabHeaders, tabImage, tabImages, tabDescription];
 
   element.addEventListener('click', (event) => {
     tabButtons.forEach((item) => {
