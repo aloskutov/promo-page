@@ -6,7 +6,7 @@
 class SmoothScroll {
   /**
    * Constructor
-   * @param {string} selector
+   * @param {string} selector class selector
    */
   constructor(selector) {
     this.links = document.querySelectorAll(selector);
@@ -28,4 +28,3 @@ class SmoothScroll {
 
 new SmoothScroll('.menu-list__link');
 new SmoothScroll('.main__scroll');
-
