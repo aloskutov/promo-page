@@ -1,16 +1,31 @@
 'use strict';
 
-const linksHead = document.querySelectorAll('.menu-list__link');
+/**
+ * Smooth Scroll class
+ */
+class SmoothScroll {
+  /**
+   * Constructor
+   * @param {string} selector
+   */
+  constructor(selector) {
+    this.links = document.querySelectorAll(selector);
 
-linksHead.forEach((item) => {
-  item.addEventListener('click', (event) => {
-    const linkId = event.target.getAttribute('href').replace('#', '');
+    this.links.forEach((item) => {
+      item.addEventListener('click', (event) => {
+        const linkId = event.target.getAttribute('href').replace('#', '');
 
-    window.scrollTo({
-      top: document.getElementById(linkId).offsetTop,
-      behavior: 'smooth',
+        window.scrollTo({
+          top: document.getElementById(linkId).offsetTop,
+          behavior: 'smooth',
+        });
+
+        event.preventDefault();
+      });
     });
+  }
+}
 
-    event.preventDefault();
-  });
-});
+new SmoothScroll('.menu-list__link');
+new SmoothScroll('.main__scroll');
+
