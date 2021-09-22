@@ -2,15 +2,15 @@
 
 const linksHead = document.querySelectorAll('.menu-list__link');
 
-linksHead.forEach(item => {
-    item.addEventListener('click', event => {
-        const linkId = event.target.getAttribute('href').replace('#', '')
+linksHead.forEach((item) => {
+  item.addEventListener('click', (event) => {
+    const linkId = event.target.getAttribute('href').replace('#', '');
 
-        window.scrollTo({
-            top: document.getElementById(linkId).offsetTop,
-            behavior: 'smooth',
-        });
-
-        event.preventDefault();
+    window.scrollTo({
+      top: document.getElementById(linkId).offsetTop,
+      behavior: 'smooth',
     });
+
+    event.preventDefault();
+  });
 });
